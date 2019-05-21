@@ -37,3 +37,15 @@ cd build
 make
 sudo make install
 ```
+### Conf de base
+`cd && git clone git@github.com:Lab3ss/dotfiles.git`
+
+`cd ~/.config/i3 && mv config config.default`
+
+`ln -s ~/dotfiles/i3/config config`
+
+`cd ~/.config && mkdir i3status && cd i3status`
+
+`ln -s ~/dotfiles/i3status/config config`
+
+Reload conf : `Mod+Shift+R`
