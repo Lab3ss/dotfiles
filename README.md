@@ -37,6 +37,12 @@ cd build
 make
 sudo make install
 ```
+
+### Utilities
+`sudo apt-get install redshift`
+
+`sudo apt-get install feh`
+
 ### Conf de base
 `cd && git clone git@github.com:Lab3ss/dotfiles.git`
 
