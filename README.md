@@ -43,6 +43,8 @@ sudo make install
 
 `sudo apt-get install feh`
 
+`sudo apt-get install compton`
+
 ### Conf de base
 `cd && git clone git@github.com:Lab3ss/dotfiles.git`
 
