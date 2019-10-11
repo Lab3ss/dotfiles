@@ -2,24 +2,24 @@
 
 while true; do
 	pscircle \
-		--output=/home/alexis/Images/wallpapers/pscircle.png \
+		--output=/home/lab3ss/Pictures/wallpapers/pscircle.jpg \
 		--background-color=1d1d1d \
-		--link-color-min=433751a0 \
-		--link-color-max=433751 \
-		--dot-color-min=3465A4 \
-		--dot-color-max=3465A4 \
+		--link-color-min=116754a0 \
+		--link-color-max=116754 \
+		--dot-color-min=00AA88 \
+		--dot-color-max=00AA88 \
 		--tree-font-size=18 \
 		--tree-font-color=c5bfc5 \
 		--tree-font-face="Noto Sans" \
 		--toplists-row-height=35 \
 		--toplists-font-size=24 \
 		--toplists-font-color=c5bfc5 \
-		--toplists-pid-font-color=4874ad \
+		--toplists-pid-font-color=00AA88 \
 		--toplists-font-face="Liberation Sans" \
 		--toplists-bar-height=7 \
 		--toplists-bar-background=444444 \
-		--toplists-bar-color=6E4C6F;
+		--toplists-bar-color=00AA88;
 
-	feh --bg-fill ~/Images/wallpapers/pscircle.png;
+	feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg;
 	sleep 10;
 done

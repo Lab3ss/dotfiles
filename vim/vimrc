@@ -1,0 +1,66 @@
+" General
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'jparise/vim-graphql'
+" Add other plugins here
+call vundle#end()
+set backspace=indent,eol,start
+set history=1000
+set showcmd
+set showmode
+set autoread
+set hidden
+
+" UI
+set laststatus=2
+set ruler
+set wildmenu
+colorscheme monokai
+set background=dark
+set cursorline
+set number
+set relativenumber
+set title
+set mouse=a
+
+" Swap & backups
+set noswapfile
+set nobackup
+set nowb
+
+" Indentation
+set autoindent
+filetype plugin indent on
+set tabstop=2
+set shiftwidth=2
+set nowrap
+
+" Search
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" Text rendering
+set encoding=utf-8
+set linebreak
+set scrolloff=3
+set sidescrolloff=5
+syntax enable
+
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+set wildmenu
+hi StatusLine ctermbg=white ctermfg=darkCyan
+hi StatusLineNC ctermbg=white ctermfg=darkGrey
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 20
+
