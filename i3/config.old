@@ -17,7 +17,7 @@ bindsym $mod+q kill
 bindsym $mod+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
@@ -100,46 +100,6 @@ bindsym $mod+Shift+greater move workspace to output right
 
 bindsym $mod+Tab workspace back_and_forth
 
-# mode resize
-bindsym $mod+r mode "resize"
-
-mode "resize" {
-		bindsym h resize shrink width 10 px or 10 ppt
-		bindsym j resize grow height 10 px or 10 ppt
-		bindsym k resize shrink height 10 px or 10 ppt
-		bindsym l resize grow width 10 px or 10 ppt
-
-		# same bindings, but for the arrow keys
-		bindsym Left resize shrink width 10 px or 10 ppt
-		bindsym Down resize grow height 10 px or 10 ppt
-		bindsym Up resize shrink height 10 px or 10 ppt
-		bindsym Right resize grow width 10 px or 10 ppt
-
-		# back to normal: Enter or Escape
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-}
-
-
-##### COLORS, BORDERS, GAPS #####
-
-set $main_color #00AA88
-set $dark_color #151515
-set $light_color #AAAAAA
-
-# class                 border  backgr. text    indicator child_border
-client.focused          $main_color $dark_color $light_color $main_color $main_color
-client.focused_inactive $dark_color $dark_color $light_color $main_color $dark_color
-client.unfocused        $dark_color $dark_color $light_color $main_color $dark_color
-client.urgent           $main_color $dark_color $light_color $main_color $main_color
-client.placeholder      $dark_color $dark_color $light_color $main_color $dark_color
-
-client.background       $dark_color
-
-for_window [class="^.*"] border pixel 4
-
-gaps inner 10
-
 ##### BAR #####
 
 bar {
@@ -150,28 +110,43 @@ bar {
 				font pango:DejaVu Sans Mono 9
 				separator_symbol 🞠
 				colors {
-					background $dark_color
-					statusline $light_color
-					separator $main_color
-					focused_workspace  $main_color $main_color $dark_color
-					active_workspace   $dark_color $dark_color $light_color
-					inactive_workspace $dark_color $dark_color $light_color
-					urgent_workspace   $dark_color $dark_color $light_color
-					binding_mode       $dark_color $dark_color $light_color
+					background #202020CC
+					statusline #999999
+					separator #00AA88
+					focused_workspace  #00AA88 #00AA88 #222222
+					active_workspace   #333333 #5f676a #ffffff
+					inactive_workspace #222222 #222222 #888888
+					urgent_workspace   #2f343a #900000 #ffffff
+					binding_mode       #2f343a #900000 #ffffff
 				}
 }
-
-##### ASSIGN APP TO WORKSPACE #####
-
-for_window [class="Spotify"] move container to workspace 7
-for_window [class="Slack"] move container to workspace 5
-for_window [class="Google-chrome"] move container to workspace 1
 
 ##### LOCKSCREEN #####
 
 bindsym $mod+F10 exec ~/Development/dotfiles/i3lock/lock.old.sh
 bindsym $mod+F9 exec --no-startup-id ~/Development/dotfiles/i3lock/blastme.sh
 bindsym $mod+F8 exec ~/Development/dotfiles/i3lock/lock.sh
+
+##### COLORS, BORDERS, GAPS #####
+
+set $color0 #ff0000
+set $color1 #00AA88
+set $color2 #00AA88
+set $color3 #151515
+set $white #ffffff
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $color1 $white $white $color2   $color1
+client.focused_inactive $color3 $white $white $color2   $color3
+client.unfocused        $color3 $white $white $color2   $color3
+client.urgent           $color1 $white $white $color2   $color1
+client.placeholder      $color3 $white $white $color2   $color3
+
+client.background       #ffffff
+
+for_window [class="^.*"] border pixel 4
+
+gaps inner 10
 
 ##### COMMANDS #####
 
@@ -194,3 +169,4 @@ exec xset r rate 200 30
 exec setxkbmap us
 
 exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG.sh
+

@@ -13,10 +13,10 @@ label=♪
 interval=once
 signal=10
 #
-[volume-pulseaudio]
-interval=once
-signal=1
-separator=false
+# [volume-pulseaudio]
+# interval=once
+# signal=1
+# separator=false
 #
 [redshift-xlow]
 full_text=🌕
@@ -48,7 +48,7 @@ command=~/.config/i3blocks/monitor_manager/monitor_manager
 interval=once
 # 
 [temperature]
-label=💻
+label=
 interval=10
 separator=false
 # 
@@ -69,7 +69,7 @@ interval=10
 separator=false
 # 
 [disk]
-label=HOME
+label=
 interval=30
 # 
 [iface]
@@ -89,5 +89,5 @@ label=⚡
 interval=30
 #
 [time]
-command=date '+📅 %d/%m/%y 🕒 %H:%M:%S  '
+command=date '+_%d/%m/%y _%H:%M:%S  '
 interval=5
