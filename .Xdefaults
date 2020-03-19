@@ -1,6 +1,6 @@
-*foreground: #ffffff
+*foreground: #f1f1f1
 *foreground_bold: #a8a19f
-*cursor: #a8a19f
+*cursor: #00aa88
 *background: #1b1918
 
 !! black
@@ -10,8 +10,8 @@
 *color1: #fb7da7
 *color9: #fb7da7
 !! green
-*color2: #4c8273
-*color10: #4c8273
+*color2: #00AA88
+*color10: #00AA88
 !! yellow
 *color3: #ffce5b
 *color11: #ffce5b
@@ -19,8 +19,8 @@
 *color4: #5f819d
 *color12: #5f819d
 !! magenta
-*color5: #6666ea
-*color13: #6666ea
+*color5: #5f819d
+*color13: #5f819d
 !! cyan
 *color6: #00AA88
 *color14: #00AA88
@@ -30,13 +30,15 @@
 
 URxvt.intensityStyles:	false
 
-URxvt.background: [85]#1d1d1d
+URxvt.background: [100]#1b1918
 
-URxvt.colorUL:		#4682B4
+URxvt.colorUL:		#5f819d
 
-URxvt.font: 		xft:DejaVu Sans Mono:size=9
+URxvt.font: 		xft:Consolas:size=11
+URxvt.lineSpace: 4
+URxvt.letterSpace: 0
 
-URxvt.internalBorder: 10
+URxvt.internalBorder: 16
 URxvt.depth:		32
 
 URxvt.scrollBar:	false
@@ -67,6 +69,7 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 !! resize-font
 URxvt.keysym.M-j: resize-font:smaller
 URxvt.keysym.M-k: resize-font:bigger
+URxvt.keysym.C-equal: resize-font:bigger
 
 !! Matcher
 URxvt.url-launcher:	linkhandler

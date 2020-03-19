@@ -181,7 +181,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
 #exec --no-startup-id slack &
 exec --no-startup-id compton &
-exec --no-startup-id google-chrome &
+#exec --no-startup-id google-chrome &
 
 # PC right, 2nd screen left
 exec xrandr --output eDP-1 --right-of DP-1 --auto

@@ -13,17 +13,28 @@ Plug 'w0rp/ale'
 Plug 'yegappan/grep'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'bling/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'tveskag/nvim-blame-line'
 Plug 'moll/vim-node'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Add other plugins here
 call plug#end()
+
+let g:candid_color_store = {
+    \ "black": {"gui": "#a8a19f", "cterm256": "0"},
+    \ "white": {"gui": "#a8a19f", "cterm256": "15"},
+    \ "red": {"gui": "#a8a19f", "cterm256": "1"},
+    \ "purple": {"gui": "#a8a19f", "cterm256": "4"},
+    \ "cyan": {"gui": "#a8a19f", "cterm256": "4"},
+    \ "green": {"gui": "#a8a19f", "cterm256": "2"},
+    \ "comment": {"gui": "#a8a19f", "cterm256": "7"},
+    \}
 
 set backspace=indent,eol,start
 set history=1000
@@ -51,6 +62,7 @@ set nowb
 " Indentation
 set autoindent
 filetype plugin indent on
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set nowrap
@@ -71,7 +83,7 @@ syntax enable
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set wildmenu
 hi StatusLine ctermbg=black ctermfg=darkCyan
-hi StatusLineNC ctermbg=white ctermfg=darkGrey
+hi StatusLineNC ctermbg=black ctermfg=white
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
@@ -83,7 +95,7 @@ let g:deoplete#enable_at_startup = 1
 " let g:airline_theme='simple'
 
 hi Normal guibg=NONE ctermbg=NONE
-highlight Visual cterm=NONE ctermbg=darkGrey ctermfg=NONE guibg=#FF0000
+highlight Visual cterm=NONE ctermbg=239 ctermfg=NONE
 
 autocmd FileType javascript set formatprg=prettier\ --stdin
 autocmd vimenter * NERDTree | wincmd p

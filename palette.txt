@@ -1,0 +1,6 @@
+color0: #1b1918 (black)
+color2: #00aa88 (green) <= cyan, main color
+color1: #fb7da7 (red)
+color3: #ffce5b (yellow/orange)
+color3: #5f819d (blue)
+color7: #a8a19f (light grey)
