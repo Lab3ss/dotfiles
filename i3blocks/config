@@ -1,15 +1,15 @@
 command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
-separator_block_width=20
+separator_block_width=30
 markup=none
 #
 #
 [weather]
-full_text=Toulouse
-command=curl 'wttr.in/Toulouse?format=3'
+full_text=Lyon
+command=curl 'wttr.in/Lyon?format=3'
 interval=3600
 #
 [volume]
-label=♪
+label=
 interval=once
 signal=10
 #
@@ -18,29 +18,19 @@ signal=10
 # signal=1
 # separator=false
 #
-[redshift-xlow]
-full_text=🌕
-command=redshift -O 2500 > /dev/null; echo 🌕
-separator=false
-#
 [redshift-low]
-full_text=🌔
-command=redshift -O 3000 > /dev/null; echo 🌔
-separator=false
-# 
-[redshift-middle]
-full_text=🌓
-command=redshift -O 3500 > /dev/null; echo 🌓
+full_text=
+command=redshift -O 3000 -b 0.7 > /dev/null; echo 
 separator=false
 # 
 [redshift-hight]
-full_text=🌒
-command=redshift -O 4000 > /dev/null; echo 🌒
+full_text=
+command=redshift -O 3800 -b 0.8 > /dev/null; echo 
 separator=false
 # 
 [redshift-xhight]
-full_text=🌑
-command=redshift -O 4500 > /dev/null; echo 🌑
+full_text=
+command=redshift -O 4500 -b 0.9 > /dev/null; echo 
 separator=false
 # 
 [monitors]
@@ -48,33 +38,25 @@ command=~/.config/i3blocks/monitor_manager/monitor_manager
 interval=once
 # 
 [temperature]
-label=
+label= 
 interval=10
 separator=false
 # 
 [memory]
-label=MEM
-separator=false
-interval=30
-# 
-[memory]
-label=SWAP
-instance=swap
 separator=false
 interval=30
 #
 [cpu_usage]
-label=CPU
 interval=10
 separator=false
 # 
 [disk]
-label=
+label= 
 interval=30
 # 
 [iface]
 interval=10
-label=🖧
+label= 
 #
 [nm-vpn]
 label=VPN:
@@ -88,6 +70,9 @@ interval=5
 label=⚡
 interval=30
 #
-[time]
-command=date '+_%d/%m/%y _%H:%M:%S  '
-interval=5
+#[time]
+#command=date '+%d/%m/%y _%H:%M:%S  '
+#interval=5
+
+[calendar]
+interval=1

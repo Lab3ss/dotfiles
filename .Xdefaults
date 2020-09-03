@@ -34,7 +34,9 @@ URxvt.background: [100]#1b1918
 
 URxvt.colorUL:		#5f819d
 
-URxvt.font: 		xft:Consolas:size=11
+URxvt.saveLines:		100000
+
+URxvt.font: xft:FiraMono Nerd Font:size=11
 URxvt.lineSpace: 4
 URxvt.letterSpace: 0
 

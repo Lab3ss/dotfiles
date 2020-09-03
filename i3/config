@@ -4,10 +4,10 @@
 set $mod Mod4
 
 # set font
-font pango:DejaVu Sans Mono 8
+font pango:FiraMono Nerd Font 8
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 # bindsym $mod+Return exec $HOME/Development/dotfiles/i3/i3_shell.sh
 
 # kill focused window
@@ -124,15 +124,16 @@ mode "resize" {
 ##### COLORS, BORDERS, GAPS #####
 
 set $main_color #00AA88
-set $dark_color #151515
+set $main_dark_color #2B554C
+set $dark_color #1d1d1d
 set $light_color #AAAAAA
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $main_color $dark_color $light_color $main_color $main_color
-client.focused_inactive $dark_color $dark_color $light_color $main_color $dark_color
-client.unfocused        $dark_color $dark_color $light_color $main_color $dark_color
-client.urgent           $main_color $dark_color $light_color $main_color $main_color
-client.placeholder      $dark_color $dark_color $light_color $main_color $dark_color
+client.focused_inactive $main_dark_color $dark_color $light_color $main_color $main_dark_color
+client.unfocused        $main_dark_color $dark_color $light_color $main_color $main_dark_color
+client.urgent           $main_dark_color $dark_color $light_color $main_color $main_dark_color
+client.placeholder      $main_dark_color $dark_color $light_color $main_color $main_dark_color
 
 client.background       $dark_color
 
@@ -147,7 +148,7 @@ bar {
 				i3bar_command i3bar --transparency
         tray_output primary
 				mode dock
-				font pango:DejaVu Sans Mono 9
+				font pango:Fira Code 10
 				separator_symbol 🞠
 				colors {
 					background $dark_color
@@ -166,6 +167,7 @@ bar {
 for_window [class="Spotify"] move container to workspace 7
 for_window [class="Slack"] move container to workspace 5
 for_window [class="Google-chrome"] move container to workspace 1
+for_window [class="Yad"] floating enable
 
 ##### LOCKSCREEN #####
 

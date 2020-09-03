@@ -4,25 +4,47 @@ filetype off
 " set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin()
+
+" Color scheme
 Plug 'flrnprz/candid.vim'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+
+" Autocomplete snippet
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Search engine
 Plug 'dyng/ctrlsf.vim'
+
+" Linter
 Plug 'w0rp/ale'
-Plug 'yegappan/grep'
-Plug 'scrooloose/nerdtree'
+
+" File explorer
+Plug 'preservim/nerdtree'
+
+" File finder
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'bling/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+
 " Plug 'terryma/vim-multiple-cursors'
+
+" Git diff in sign column
 Plug 'airblade/vim-gitgutter'
+
+" Syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
+
+" TS Syntax (based on vim-javascript) + compiler
 Plug 'leafgarland/typescript-vim'
+
+" GraphQL queries syntax
 Plug 'jparise/vim-graphql'
+
+" Git blame current line
 Plug 'tveskag/nvim-blame-line'
+
 Plug 'moll/vim-node'
+
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plug 'ryanoasis/vim-devicons'
 " Add other plugins here
 call plug#end()
 
@@ -80,6 +102,9 @@ set scrolloff=3
 set sidescrolloff=5
 syntax enable
 
+set path=.,src,node_nodules
+set suffixesadd=.js,.jsx,.ts
+
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set wildmenu
 hi StatusLine ctermbg=black ctermfg=darkCyan
@@ -106,6 +131,12 @@ autocmd User Node
   \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
 	\ endif
 
-nmap     <C-F>f <Plug>CtrlSFPrompt                  
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
 nmap     <C-F>n <Plug>CtrlSFCwordPath
 nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+nmap     <C-Space> :NERDTreeToggle<CR>
