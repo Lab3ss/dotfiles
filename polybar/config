@@ -1,0 +1,241 @@
+;==========================================================
+;
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #001d1f21
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #FFFFFF
+foreground-alt = #555
+primary = #8ef6e4
+secondary = #e60053
+alert = #bd2c40
+
+[bar/top]
+;monitor = ${env:MONITOR:HDMI-1}
+locale = fr_FR.UTF_8
+width = 100%
+height = 32
+;offset-x = 1%
+;offset-y = 20
+radius = 10
+fixed-center = true
+
+background = #20FFFFFF
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 10
+border-top-color = #00000000
+border-left-size = 20
+border-left-color = #00000000
+border-right-size = 20
+border-right-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Anonymice Nerd Font:size=12:weight=bold;3
+font-1 = Anonymice Nerd Font:size=12:weight=bold;4
+font-2 = Anonymice Nerd Font:size=14:weight=bold;4
+font-3 = Noto Sans Mono:size=11:weight=bold;4
+
+modules-left = i3
+modules-center = date time meteo
+modules-right = lighting pulseaudio filesystem memory cpu wireless eth downspeed upspeed
+
+tray-position = none
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = i3
+
+enable-ipc = true
+
+;override-redirect = true
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted =  %percentage_used%%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 4
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 4
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+label = %percentage_used%%
+
+[module/eth]
+type = internal/network
+interface = enp39s0
+interval = 3.0
+
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%
+
+[module/downspeed]
+type = internal/network
+interface = enp39s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %downspeed%
+
+[module/upspeed]
+type = internal/network
+interface = enp39s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %upspeed%
+
+format-disconnected =
+
+[module/wireless]
+type = internal/network
+interface = wlp41s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip% ( %downspeed%,  %upspeed%)
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%A %d %b"
+
+label = %date%
+
+[module/time]
+type = internal/date
+interval = 5
+
+time = %H:%M
+label =  %time%
+
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = %{T3}  %{T-}muted
+label-muted-foreground = ${root.foreground}
+
+ramp-volume-0 = %{T3} %{T-}
+ramp-volume-1 = %{T3} %{T-}
+ramp-volume-2 = %{T3} %{T-}
+ramp-volume-3 = %{T3}墳 %{T-}
+ramp-volume-4 = %{T3}墳 %{T-}
+ramp-volume-5 = %{T3}墳 %{T-}
+ramp-volume-6 = %{T3} %{T-}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.primary}
+bar-volume-foreground-6 = ${colors.primary}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 1
+bar-volume-fill = ─
+bar-volume-fill-font = 1
+bar-volume-empty = ─
+bar-volume-empty-font = 1
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/meteo]
+type = custom/script
+exec = curl -s 'wttr.in/Meyzieu?format=%c+%t\n'
+label = %{T4}%output%%{T-}
+interval = 120

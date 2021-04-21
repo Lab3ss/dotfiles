@@ -1,12 +1,98 @@
-" General
-set nocompatible
-filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
+" ############################################################################
+" ############################## GENERAL #####################################
+" ############################################################################
+
+set encoding=utf-8 " needed for devicons
+
+let mapleader = "\<space>"
+
+set nocompatible                 " Not Vi Compatible
+
+set mouse=a                      " Enable mouse support for all modes
+
+                                 " #### FILE TYPE ###
+                                 "
+filetype on                      " Detect type of file that is edited
+filetype plugin on               " Load specific file type plugin
+filetype indent on               " Load specific file type indent plugin
+
+set hidden                       " Hidde buffer instead of unload on closing window
+
+                                 " ### SPECIAL CHARACTERS ###
+                                 "
+set expandtab                    " Converting tabs to spaces. Essential in Python
+" set backspace=indent,eol,nostop  " Allow backspacing (or Ctrl-W/Ctrl-U) in insert mode over all
+
+                                 " ### INDENTATION ###
+                                 "
+set autoindent                   " Respect indentation when starting a new line
+set smartindent                  " Auto add indent level
+set tabstop=4                    " Number of spaces Tab is counted for
+set shiftwidth=4                 " Number of spaces to use for autoindent
+set nowrap                       " display one line on one line
+
+                                 " ### SWAP & BACKUP ###
+                                 "
+set noswapfile                   " Disable buffer's swapfiles
+set nobackup                     " Disable persistant backups
+set writebackup                  " Create a temporary backup before overweritting a file
+
+                                 " ### SEARCH ###
+                                 "
+set smartcase                    " Ignore case on search if pattern contains upper case char
+set path=,,                      " Only use working directory scope on searching for anything
+                                 "                  
+                                 " Ignore some files on searching
+                                 " wig = wildignore
+                                 "
+set wig+=*/node_modules/*        " Linux/MaxOSX 
+set wig+=*/dist/*                "
+set wig+=*.so,*.swp,*.zip        "
+set wig+=*\\node_modules\\*      " Windows
+set wig+=*\\dist\\*              "
+set wig+=*.swp,*.zip,*.exe       "
+
+                                 " ### COMMAND MODE ###
+                                 "
+set history=1000                 " Number of ':' commands and search patterns to remember
+set wildmenu                     " Command-line completion menu
+
+                                 " ### NAVIGATION ###
+                                 "
+set scrolloff=999                " Center window around cursor Y
+set sidescrolloff=999            " Cenrer window around cursor X
+
+                                 " ### DISPLAY ###
+                                 "
+set noshowcmd                    " Hide partial commands on last line
+set laststatus=2                 " Always hide status bar
+set noruler                      " Hide cursor pos
+set number                       " Display current line number
+set relativenumber               " Display other lines number relative to current line
+set cursorline
+syntax enable                    " Enable syntax highlighting keeping current colors settings
+
+
+" ############################################################################
+" ################################ TODO ######################################
+" ############################################################################
+" @TODO check on linux
+" https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax/
+" highlight Normal ctermbg=NONE
+" highlight Visual cterm=NONE ctermbg=239 ctermfg=NONE
+
+
+set statusline=\ %t             " @TODO: find a plugin to handle status line.
+" set noshowmode                   " Do not display current mode in status line
+
+" ############################################################################
+" ############################### PLUGINS ####################################
+" ############################################################################
 
 call plug#begin()
 
-" Color scheme
-Plug 'flrnprz/candid.vim'
+" Color schemes list
+" Plug 'flazz/vim-colorschemes'
 
 " Autocomplete snippet
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -15,7 +101,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dyng/ctrlsf.vim'
 
 " Linter
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " File explorer
 Plug 'preservim/nerdtree'
@@ -23,113 +109,67 @@ Plug 'preservim/nerdtree'
 " File finder
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Plug 'terryma/vim-multiple-cursors'
-
 " Git diff in sign column
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " Syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
 
 " TS Syntax (based on vim-javascript) + compiler
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 
 " GraphQL queries syntax
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 
-" Git blame current line
-Plug 'tveskag/nvim-blame-line'
+" Plug 'moll/vim-node'
 
-Plug 'moll/vim-node'
-
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'ryanoasis/vim-devicons'
-" Add other plugins here
+
+" Plug 'wahidrahim/resize-font'
+
+" Plug 'lambdalisue/vim-fullscreen'
+
+Plug 'junegunn/goyo.vim'
+
+" Plug 'junegunn/limelight.vim'
+
+" TODO : check1 vim-unimpaired
+"
 call plug#end()
 
-let g:candid_color_store = {
-    \ "black": {"gui": "#a8a19f", "cterm256": "0"},
-    \ "white": {"gui": "#a8a19f", "cterm256": "15"},
-    \ "red": {"gui": "#a8a19f", "cterm256": "1"},
-    \ "purple": {"gui": "#a8a19f", "cterm256": "4"},
-    \ "cyan": {"gui": "#a8a19f", "cterm256": "4"},
-    \ "green": {"gui": "#a8a19f", "cterm256": "2"},
-    \ "comment": {"gui": "#a8a19f", "cterm256": "7"},
-    \}
+colorscheme peachpuff                    " Select color scheme 
 
-set backspace=indent,eol,start
-set history=1000
-set showcmd
-set showmode
-set autoread
-set hidden
+                                      " ### NERDTREE ###
+let g:netrw_liststyle = 3             " Display files as a tree
+let g:netrw_browse_split = 3          " <cr> open file in a new tab 
+let g:netrw_winsize = 20              " Window with in percents
 
-" UI
-set laststatus=2
-set ruler
-set wildmenu
-colorscheme candid
-set background=dark
-set number
-set relativenumber
-set title
-set mouse=a
+                                      " ### CTRL-P ###
+let g:ctrlp_working_path_mode = 'r'   " Search in project
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]node_modules$',
+	\ 'file': '\v\.(exe|so|dll)$',
+	\ }
 
-" Swap & backups
-set noswapfile
-set nobackup
-set nowb
+                                      " ### GOYO ###"
+let g:goyo_width = 100
+let g:goyo_height = '90%'
 
-" Indentation
-set autoindent
-filetype plugin indent on
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set nowrap
+let g:ale_fixers = ['eslint']
 
-" Search
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
+" ############################################################################
+" ############################## MAPPING #####################################
+" ############################################################################
 
-" Text rendering
-set encoding=utf-8
-set linebreak
-set scrolloff=3
-set sidescrolloff=5
-syntax enable
-
-set path=.,src,node_nodules
-set suffixesadd=.js,.jsx,.ts
-
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
-set wildmenu
-hi StatusLine ctermbg=black ctermfg=darkCyan
-hi StatusLineNC ctermbg=black ctermfg=white
-
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 2
-let g:netrw_winsize = 20
-let g:deoplete#enable_at_startup = 1
-
-" let g:airline_theme='simple'
-
-hi Normal guibg=NONE ctermbg=NONE
-highlight Visual cterm=NONE ctermbg=239 ctermfg=NONE
-
-autocmd FileType javascript set formatprg=prettier\ --stdin
-autocmd vimenter * NERDTree | wincmd p
-autocmd BufEnter * EnableBlameLine
-autocmd User Node
-  \ if &filetype == "javascript" |
-  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
-  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
-	\ endif
+nmap     <leader>9 f(lci(
+nmap     <leader>[ f[lci[
+nmap     <leader>{ f{lci{
+nmap     <leader>' f'lci'
+nmap     <leader>" f"lci"
+nmap     <leader>` f`lci`
+nmap     <leader>l iconsole.log(
 
 nmap     <C-F>f <Plug>CtrlSFPrompt
 vmap     <C-F>f <Plug>CtrlSFVwordPath
@@ -140,3 +180,39 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-Space> :NERDTreeToggle<CR>
+nmap     <C-G> :Goyo<CR>
+nmap     <C-H> :bprev<CR>
+nmap     <C-L> :bnext<CR>
+nmap <C-[> <Plug>(ale_previous_wrap)
+nmap <C-]> <Plug>(ale_next_wrap)
+nmap <leader>p :ALEFix<CR>
+
+" map <F11> :ResizeFontSmaller<CR>
+" map <F12> :ResizeFontBigger<CR>
+
+hi Normal guibg=none ctermbg=none
+hi TabLine cterm=none ctermbg=none ctermfg=5
+hi TabLineSel ctermfg=9 ctermbg=none cterm=bold
+hi TabLineFill ctermfg=12 ctermbg=none cterm=none
+hi CursorLine cterm=bold ctermbg=232 ctermfg=none
+hi Visual cterm=none ctermfg=none ctermbg=0
+hi StatusLine cterm=none ctermbg=none ctermfg=none
+hi StatusLineNC cterm=none ctermbg=none ctermfg=none
+hi Search cterm=none ctermbg=0 ctermfg=none
+hi VertSplit cterm=none ctermbg=none ctermfg=0
+hi LineNr ctermfg=241 ctermbg=none cterm=none
+hi CursorLineNr ctermfg=9 ctermbg=none cterm=none
+hi SignColumn cterm=none ctermbg=none
+hi MatchParen cterm=bold ctermbg=0 ctermfg=none
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+highlight ALEWarning cterm=none ctermbg=94
+highlight ALEError cterm=none ctermbg=88
+
+"let g:ale_set_highlights = 0
+"let g:ale_exclude_highlights = 1
+"
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif

@@ -7,7 +7,7 @@ set $mod Mod4
 font pango:FiraMono Nerd Font 8
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec $HOME/Development/dotfiles/i3/i3_shell.sh
 
 # kill focused window
@@ -22,15 +22,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
 
-# start dmenu (a program launcher)
+  # start menu (a program launcher)
 bindsym $mod+Shift+d exec rofi -theme ~/Development/dotfiles/rofi/dark.theme -show run
 
 # i3-dmenu-desktop another program launcher for .desktop
 bindsym $mod+d exec rofi -theme ~/Development/dotfiles/rofi/dark.theme -show drun
-# change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
 ##### LAYOUT SETTINGS #####
 
@@ -137,31 +133,15 @@ client.placeholder      $main_dark_color $dark_color $light_color $main_color $m
 
 client.background       $dark_color
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 0
 
-gaps inner 10
+gaps inner 20
 
 ##### BAR #####
 
-bar {
-        status_command i3blocks
-				i3bar_command i3bar --transparency
-        tray_output primary
-				mode dock
-				font pango:Fira Code 10
-				separator_symbol 🞠
-				colors {
-					background $dark_color
-					statusline $light_color
-					separator $main_color
-					focused_workspace  $main_color $main_color $dark_color
-					active_workspace   $dark_color $dark_color $light_color
-					inactive_workspace $dark_color $dark_color $light_color
-					urgent_workspace   $dark_color $dark_color $light_color
-					binding_mode       $dark_color $dark_color $light_color
-				}
-}
+exec_always --no-startup-id ~/Development/dotfiles/polybar/polybar.sh &
 
+bindsym $mod+p exec polybar-msg cmd toggle
 ##### ASSIGN APP TO WORKSPACE #####
 
 for_window [class="Spotify"] move container to workspace 7
@@ -177,12 +157,16 @@ bindsym $mod+F8 exec ~/Development/dotfiles/i3lock/lock.sh
 
 ##### COMMANDS #####
 
-exec redshift -O 4500
+# exec redshift -O 4500
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
+exec --no-startup-id feh --bg-fill ~/.backgrounds/trianglify.png
+bindsym $mod+Shift+b exec ~/Development/bg-generator/bg.sh > ~/Development/bg-generator/output.txt
+
+bindsym $mod+Shift+minus exec redshift -O 3400 -b 0.7
+bindsym $mod+Shift+equal exec redshift -O 4500 -b 1
 
 #exec --no-startup-id slack &
-exec --no-startup-id compton &
+exec --no-startup-id picom &
 #exec --no-startup-id google-chrome &
 
 # PC right, 2nd screen left
@@ -192,6 +176,7 @@ exec xrandr --output eDP-1 --right-of DP-2-1 --auto
 
 # Reduce keyboard delay to detect the same key
 exec xset r rate 200 30
+exec uncluter -idle 1 --root &
 
 exec setxkbmap us
 
