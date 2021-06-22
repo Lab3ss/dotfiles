@@ -21,7 +21,7 @@ set hidden                       " Hidde buffer instead of unload on closing win
                                  " ### SPECIAL CHARACTERS ###
                                  "
 set expandtab                    " Converting tabs to spaces. Essential in Python
-" set backspace=indent,eol,nostop  " Allow backspacing (or Ctrl-W/Ctrl-U) in insert mode over all
+set backspace=2                  " Allow backspacing (or Ctrl-W/Ctrl-U) in insert mode over all
 
                                  " ### INDENTATION ###
                                  "
@@ -30,6 +30,8 @@ set smartindent                  " Auto add indent level
 set tabstop=4                    " Number of spaces Tab is counted for
 set shiftwidth=4                 " Number of spaces to use for autoindent
 set nowrap                       " display one line on one line
+
+set foldmethod=manual            " Define folds using syntax
 
                                  " ### SWAP & BACKUP ###
                                  "
@@ -72,15 +74,9 @@ set relativenumber               " Display other lines number relative to curren
 set cursorline
 syntax enable                    " Enable syntax highlighting keeping current colors settings
 
-
 " ############################################################################
 " ################################ TODO ######################################
 " ############################################################################
-" @TODO check on linux
-" https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax/
-" highlight Normal ctermbg=NONE
-" highlight Visual cterm=NONE ctermbg=239 ctermfg=NONE
-
 
 set statusline=\ %t             " @TODO: find a plugin to handle status line.
 " set noshowmode                   " Do not display current mode in status line
@@ -123,8 +119,6 @@ Plug 'pangloss/vim-javascript'
 
 " Plug 'moll/vim-node'
 
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 Plug 'ryanoasis/vim-devicons'
 
 " Plug 'wahidrahim/resize-font'
@@ -140,6 +134,20 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 colorscheme peachpuff                    " Select color scheme 
+
+" hi Normal ctermbg=NONE guibg=NONE
+" hi TabLine guibg=NONE ctermbg=NONE ctermfg=239
+" hi TabLineSel  guibg=NONE gui=bold ctermfg=250 ctermbg=NONE cterm=bold
+" hi TabLineFill guibg=NONE ctermbg=NONE ctermfg=NONE guifg=NONE cterm=NONE gui=NONE
+" hi LineNr guibg=NONE ctermbg=NONE
+" hi CursorLine guibg=NONE ctermbg=NONE gui=bold cterm=bold
+" hi CursorLineNr guibg=NONE ctermbg=NONE gui=bold cterm=bold
+" hi Visual guibg=#4a5264 guifg=none ctermbg=238 ctermfg=NONE
+" hi VertSplit guibg=NONE ctermbg=NONE
+" highlight SignColumn ctermbg=NONE
+" highlight GitGutterAdd    guifg=NONE ctermfg=2
+" highlight GitGutterChange guifg=NONE ctermfg=3
+" highlight GitGutterDelete guifg=NONE ctermfg=1
 
                                       " ### NERDTREE ###
 let g:netrw_liststyle = 3             " Display files as a tree
@@ -170,6 +178,8 @@ nmap     <leader>' f'lci'
 nmap     <leader>" f"lci"
 nmap     <leader>` f`lci`
 nmap     <leader>l iconsole.log(
+nmap     <leader>z zA
+nmap     <leader>g :GitGutterBufferToggle<CR>
 
 nmap     <C-F>f <Plug>CtrlSFPrompt
 vmap     <C-F>f <Plug>CtrlSFVwordPath
