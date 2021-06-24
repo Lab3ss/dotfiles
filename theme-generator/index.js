@@ -12,5 +12,9 @@ const canvas = trianglify({
   yColors: 'match',
 }).toCanvas()
 
-const file = fs.createWriteStream('./.backgrounds/trianglify.png')
-canvas.createPNGStream().pipe(file)
+try {
+    const file = fs.createWriteStream('/home/lab3ss/.backgrounds/trianglify.png')
+    canvas.createPNGStream().pipe(file)
+} catch (e){
+    console.error(e)
+}

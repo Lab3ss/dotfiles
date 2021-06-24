@@ -8,7 +8,9 @@ primary=''
 secondary=''
 
 get_color_hunt_palettes () {
-    res=`wget -qO- --no-check-certificate --method POST --body-data 'sort=popular&step=0&timeframe=4000' 'https://colorhunt.co/php/feed.php'`
+    #res=`wget -qO- --no-check-certificate --method POST --body-data 'sort=popular&step=0&timeframe=4000' 'https://colorhunt.co/php/feed.php'`
+    #echo $res > res.txt
+    res=`cat res.txt`
 }
 
 get_color_average () {
@@ -157,7 +159,7 @@ echo "Primary : $primary"
 echo "Secondary : $secondary"
 
 ~/.nvm/versions/node/v14.8.0/bin/node ~/Development/dotfiles/theme-generator/index.js $darker $primary $secondary $lighter
-feh --bg-fill ~/.backgrounds/trianglify.png
+feh --bg-fill /home/lab3ss/.backgrounds/trianglify.png
 
 #i3_rofi_template=`cat ~/Development/dotfiles/polybar/config`
 
