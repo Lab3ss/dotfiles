@@ -1,0 +1,46 @@
+BEFORE FILTERS  40
+eliminated because of lighter 157
+eliminated because of darker 195
+eliminated because of darker 133.33333333333334
+eliminated because of darker 208.66666666666666
+eliminated because of darker 206
+eliminated because of primary 217.66666666666666
+eliminated because of darker 152.33333333333334
+eliminated because of darker 117.33333333333333
+eliminated because of darker 160
+eliminated because of primary 240.66666666666666
+eliminated because of darker 208.33333333333334
+eliminated because of lighter 123.33333333333333
+eliminated because of lighter 144
+eliminated because of darker 139.66666666666666
+eliminated because of lighter 125
+eliminated because of primary 218
+eliminated because of darker 201.66666666666666
+eliminated because of lighter 82.33333333333333
+eliminated because of darker 208
+eliminated because of lighter 160.66666666666666
+eliminated because of darker 134.33333333333334
+eliminated because of primary 220.66666666666666
+eliminated because of darker 123.33333333333333
+eliminated because of primary 215.33333333333334
+eliminated because of primary 212.66666666666666
+eliminated because of lighter 139.33333333333334
+eliminated because of darker 211.33333333333334
+eliminated because of darker 181
+eliminated because of darker 180.66666666666666
+eliminated because of darker 201.66666666666666
+eliminated because of darker 191.33333333333334
+eliminated because of darker 197
+eliminated because of darker 145
+AFTER FILTERS  7
+{
+  primary: { model: 'rgb', color: [ 255, 126, 103 ], valpha: 1 },
+  secondary: { model: 'rgb', color: [ 162, 213, 242 ], valpha: 1 },
+  lighter: { model: 'rgb', color: [ 250, 250, 250 ], valpha: 1 },
+  darker: { model: 'rgb', color: [ 7, 104, 159 ], valpha: 1 }
+}
+{
+  model: 'rgb',
+  color: [ 26.922112000000006, 52.35008000000002, 66.76800000000001 ],
+  valpha: 1
+}

@@ -24,8 +24,8 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #FFFFFF
 foreground-alt = #555
-primary = #8ef6e4
-secondary = #e60053
+primary = #F9F7F7
+secondary = #112D4E
 alert = #bd2c40
 
 [bar/top]
@@ -105,7 +105,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.secondary}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 

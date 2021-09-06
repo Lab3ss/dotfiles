@@ -24,7 +24,7 @@
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #3F72AFdd;
+  background-color: @DARKERdd;
 }
 
 mainbox {
@@ -37,7 +37,7 @@ inputbar {
 }
 
 prompt {
-  text-color: #112D4E;
+  text-color: @PRIMARY;
 }
 
 textbox-prompt-colon {
@@ -59,17 +59,17 @@ listview {
 element {
   padding: 5px;
   text-color: @text-alt;
-  highlight: bold #3F72AF;
+  highlight: bold @DARKER;
   border-radius: 3px;
 }
 
 element selected {
-  background-color: #112D4E;
+  background-color: @PRIMARY;
   text-color: @text;
 }
 
 element urgent, element selected urgent {
-  text-color: #112D4E;
+  text-color: @PRIMARY;
 }
 
 element active, element selected active {
@@ -81,7 +81,7 @@ message {
   border-radius: 3px;
   background-color: @emphasis;
   border: 1px;
-  border-color: #112D4E;
+  border-color: @PRIMARY;
 }
 
 button selected {

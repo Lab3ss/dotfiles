@@ -177,9 +177,12 @@ bindsym $mod+F8 exec ~/Development/dotfiles/i3lock/lock.sh
 
 ##### COMMANDS #####
 
-exec redshift -O 4500
+# exec redshift -O 4500
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
+exec --no-startup-id feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
+bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Development/dotfiles/theme-generator/output.txt
+
+# exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
 #exec --no-startup-id slack &
 exec --no-startup-id compton &
