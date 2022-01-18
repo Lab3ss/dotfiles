@@ -108,16 +108,21 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Git diff in sign column
 " Plug 'airblade/vim-gitgutter'
 
-" Syntax highlighting and indentation
+" Global JS Syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
 
 " TS Syntax (based on vim-javascript) + compiler
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
+
+" JSX Syntax
+Plug 'maxmellon/vim-jsx-pretty'
 
 " GraphQL queries syntax
-" Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 
 " Plug 'moll/vim-node'
+
+Plug 'f-person/git-blame.nvim'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -167,6 +172,11 @@ let g:goyo_height = '90%'
 
 let g:ale_fixers = ['eslint']
 
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+
+let g:gitblame_enabled = 0
+
 " ############################################################################
 " ############################## MAPPING #####################################
 " ############################################################################
@@ -190,12 +200,18 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-Space> :NERDTreeToggle<CR>
-nmap     <C-G> :Goyo<CR>
+" nmap     <C-G> :Goyo<CR>
+nmap     <C-G>b :GitBlameToggle<CR>
 nmap     <C-H> :bprev<CR>
 nmap     <C-L> :bnext<CR>
 nmap <C-[> <Plug>(ale_previous_wrap)
 nmap <C-]> <Plug>(ale_next_wrap)
 nmap <leader>p :ALEFix<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <C-Q> :bd<CR>
 
 " map <F11> :ResizeFontSmaller<CR>
 " map <F12> :ResizeFontBigger<CR>
@@ -212,6 +228,7 @@ hi Search cterm=none ctermbg=0 ctermfg=none
 hi VertSplit cterm=none ctermbg=none ctermfg=0
 hi LineNr ctermfg=0 ctermbg=none cterm=none
 hi CursorLineNr ctermfg=1 ctermbg=none cterm=none
+hi Comment cterm=italic
 hi SignColumn cterm=none ctermbg=none
 hi MatchParen cterm=bold ctermbg=0 ctermfg=none
 "highlight clear ALEErrorSign

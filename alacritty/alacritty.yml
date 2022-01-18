@@ -128,23 +128,23 @@ font:
     #style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Chilanka
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Chilanka
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
@@ -179,7 +179,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: "#101D2C"
+    background: "#1E1C1F"
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -250,14 +250,14 @@ colors:
 
   # Normal colors
   normal:
-    black:   "#283341"
-    red:     "#DBE2EF"
-    green:   "#728396"
-    yellow:  "#8F9CAB"
-    blue:    "#E2E8F2"
-    magenta: "#F9F7F7"
-    cyan:    "#8CAACF"
-    white:   "#FAF9F9"
+    black:   "#343335"
+    red:     "#F85F73"
+    green:   "#727F99"
+    yellow:  "#8E99AD"
+    blue:    "#F97F8F"
+    magenta: "#FBE8D3"
+    cyan:    "#BEB9C1"
+    white:   "#FCEDDC"
 
   # Bright colors
   #bright:

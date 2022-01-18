@@ -28,6 +28,19 @@ echo "$rofi_config_template" | sed -e "s/@PRIMARY/$primary/g" -e "s/@DARKER/$dar
 alacritty_config_template=`cat ~/Development/dotfiles/alacritty/alacritty.template.yml`
 echo "$alacritty_config_template" | sed -e 's/^    background: "#[a-zA-Z0-9]\{6\}"$/    background: "'"$term"'"/g' -e 's/^    black:   "#[a-zA-Z0-9]\{6\}"$/    black:   "'"$color0"'"/g' -e 's/^    red:     "#[a-zA-Z0-9]\{6\}"$/    red:     "'"$color1"'"/g' -e 's/^    green:   "#[a-zA-Z0-9]\{6\}"$/    green:   "'"$color2"'"/g' -e 's/^    yellow:  "#[a-zA-Z0-9]\{6\}"$/    yellow:  "'"$color3"'"/g' -e 's/^    blue:    "#[a-zA-Z0-9]\{6\}"$/    blue:    "'"$color4"'"/g' -e 's/^    magenta: "#[a-zA-Z0-9]\{6\}"$/    magenta: "'"$color5"'"/g' -e 's/^    cyan:    "#[a-zA-Z0-9]\{6\}"$/    cyan:    "'"$color6"'"/g' -e 's/^    white:   "#[a-zA-Z0-9]\{6\}"$/    white:   "'"$color7"'"/g' > ~/Development/dotfiles/alacritty/alacritty.yml
 
+pscircle_config=`cat ~/Development/dotfiles/pscircle/makeBG.sh`
+echo "$pscircle_config" | sed \
+    -e 's/background-color=[a-zA-Z0-9]\{6\}/background-color='"$darker"'/g' \
+    -e 's/link-color-min=[a-zA-Z0-9]\{8\}/link-color-min='"$primary"'50/g' \
+    -e 's/link-color-max=[a-zA-Z0-9]\{8\}/link-color-max='"$primary"'70/g' \
+    -e 's/dot-color-min=[a-zA-Z0-9]\{6\}/dot-color-min='"$primary"'/g' \
+    -e 's/dot-color-max=[a-zA-Z0-9]\{6\}/dot-color-max='"$primary"'/g' \
+    -e 's/tree-font-color=[a-zA-Z0-9]\{6\}/tree-font-color='"$lighter"'/g' \
+    -e 's/toplists-font-color=[a-zA-Z0-9]\{6\}/toplists-font-color='"$lighter"'/g' \
+    -e 's/toplists-pid-font-color=[a-zA-Z0-9]\{6\}/toplists-pid-font-color='"$primary"'/g' \
+    -e 's/toplists-bar-background=[a-zA-Z0-9]\{6\}/toplists-bar-background='"$secondary"'/g' \
+    -e 's/toplists-bar-color=[a-zA-Z0-9]\{6\}/toplists-bar-color='"$primary"'/g' | sed -e 's/=#/=/g' > ~/Development/dotfiles/pscircle/makeBG.sh
+
 echo "Primary : $primary"
 echo "Secondary : $secondary"
 echo "Lighter : $lighter"

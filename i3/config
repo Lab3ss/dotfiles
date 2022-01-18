@@ -7,7 +7,7 @@ set $mod Mod4
 font pango:FiraMono Nerd Font 8
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec $HOME/Development/dotfiles/i3/i3_shell.sh
 
 # kill focused window
@@ -137,31 +137,13 @@ client.placeholder      $main_dark_color $dark_color $light_color $main_color $m
 
 client.background       $dark_color
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 0
 
-gaps inner 10
+gaps inner 20
 
 ##### BAR #####
-
-bar {
-        status_command i3blocks
-				i3bar_command i3bar --transparency
-        tray_output primary
-				mode dock
-				font pango:Fira Code 10
-				separator_symbol 🞠
-				colors {
-					background $dark_color
-					statusline $light_color
-					separator $main_color
-					focused_workspace  $main_color $main_color $dark_color
-					active_workspace   $dark_color $dark_color $light_color
-					inactive_workspace $dark_color $dark_color $light_color
-					urgent_workspace   $dark_color $dark_color $light_color
-					binding_mode       $dark_color $dark_color $light_color
-				}
-}
-
+exec_always --no-startup-id ~/Development/dotfiles/polybar/polybar.sh &
+bindsym $mod+p exec polybar-msg cmd toggle
 ##### ASSIGN APP TO WORKSPACE #####
 
 for_window [class="Spotify"] move container to workspace 7
@@ -179,19 +161,27 @@ bindsym $mod+F8 exec ~/Development/dotfiles/i3lock/lock.sh
 
 # exec redshift -O 4500
 
+bindsym $mod+Shift+minus exec redshift -O 3400 -b 0.7
+bindsym $mod+Shift+equal exec redshift -O 4500 -b 1
+
 exec --no-startup-id feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
 bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Development/dotfiles/theme-generator/output.txt
+
+bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
+bindsym $mod+Shift+x exec feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
 
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
 #exec --no-startup-id slack &
-exec --no-startup-id compton &
+exec --no-startup-id picom &
 #exec --no-startup-id google-chrome &
 
 # PC right, 2nd screen left
 exec xrandr --output eDP-1 --right-of DP-1 --auto
 exec xrandr --output eDP-1 --right-of DP-2 --auto
 exec xrandr --output eDP-1 --right-of DP-2-1 --auto
+
+exec uncluter -idle 1 --root &
 
 # Reduce keyboard delay to detect the same key
 exec xset r rate 200 30

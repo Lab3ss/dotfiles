@@ -19,6 +19,7 @@
   spacing: 0;
   background-color: transparent;
   text-color: @text;
+  font: "Anonymice Nerd Font 22";
 }
 
 window {

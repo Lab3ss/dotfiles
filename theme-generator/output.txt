@@ -1,13 +1,13 @@
-Primary : #112D4E
-Secondary : #DBE2EF
-Lighter : #F9F7F7
-Darker : #3F72AF
-Term : #101D2C
-Color0: #283341
-Color1: #DBE2EF
-Color2: #728396
-Color3: #8F9CAB
-Color4: #E2E8F2
-Color5: #F9F7F7
-Color6: #8CAACF
-Color7: #FAF9F9
+Primary : #283C63
+Secondary : #F85F73
+Lighter : #FBE8D3
+Darker : #928A97
+Term : #1E1C1F
+Color0: #343335
+Color1: #F85F73
+Color2: #727F99
+Color3: #8E99AD
+Color4: #F97F8F
+Color5: #FBE8D3
+Color6: #BEB9C1
+Color7: #FCEDDC

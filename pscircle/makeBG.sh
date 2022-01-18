@@ -1,25 +1,22 @@
 #!/bin/bash
 
-while true; do
-	pscircle \
-		--output=/home/lab3ss/Pictures/wallpapers/pscircle.jpg \
-		--background-color=1d1d1d \
-		--link-color-min=00AA8830 \
-		--link-color-max=00AA8870 \
-		--dot-color-min=00AA88 \
-		--dot-color-max=00AA88 \
-		--tree-font-size=18 \
-		--tree-font-color=c5bfc5 \
-		--tree-font-face="DejaVu Sans Mono" \
-		--toplists-row-height=35 \
-		--toplists-font-size=24 \
-		--toplists-font-color=c5bfc5 \
-		--toplists-pid-font-color=00AA88 \
-		--toplists-font-face="DejaVu Sans Mono" \
-		--toplists-bar-height=7 \
-		--toplists-bar-background=444444 \
-		--toplists-bar-color=00AA88;
+pscircle \
+    --output=./pscircle.jpg \
+    --background-color=928A97 \
+    --link-color-min=283C6350 \
+    --link-color-max=283C6370 \
+    --dot-color-min=283C63 \
+    --dot-color-max=283C63 \
+    --tree-font-size=18 \
+    --tree-font-color=FBE8D3 \
+    --tree-font-face="DejaVu Sans Mono" \
+    --toplists-row-height=35 \
+    --toplists-font-size=24 \
+    --toplists-font-color=FBE8D3 \
+    --toplists-pid-font-color=283C63 \
+    --toplists-font-face="DejaVu Sans Mono" \
+    --toplists-bar-height=7 \
+    --toplists-bar-background=F85F73 \
+    --toplists-bar-color=283C63;
 
-	feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg;
-	sleep 10;
-done
+feh --bg-fill ./pscircle.jpg;

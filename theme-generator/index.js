@@ -5,6 +5,7 @@ const trianglify = require('trianglify')
 const fs = require('fs')
 const path = require('path')
 
+/*
 const mock = [
   '222831393e4600adb5eeeeee',
   'f9ed69f08a5db83b5e6a2c70',
@@ -47,6 +48,27 @@ const mock = [
   'f85f73fbe8d3928a97283c63',
   '3038413a4750d72323eeeeee'
 ]
+*/
+
+const mock = [
+            '1D2D50133B5C1E5F74FCDAB7',
+            '2A09443B185FA12568FEC260',
+            '161616346751ECDBBAC84B31',
+            'F39189BB80826E7582046582',
+            '2E4C6D396EB0DADDFCFC997C',
+            '1F1D363F3351864879E9A6A6',
+            '726A95709FB0A0C1B8F4EBC1',
+            '383E56F69E7BEEDAD1D4B5B0',
+            '557571D49A89F7D1BAF4F4F4',
+            '305F72F1D1B5F0B7A4F18C8E',
+            'BEDBBB8DB59692817A707070',
+            '33313B62374E007880FDC57B',
+            '44000D83142CAD1D45F9D276',
+            '35394126282B5F85DB90B8F8',
+            'F4ABC4595B83333456060930',
+            '7D063331112CF2A07BFBDCC4',
+            '283c63F85F73FBE8D3928A97',
+    ]
 
 const getColorAverage = (color) => {
         const c = color.rgb().array()

@@ -19,12 +19,13 @@
   spacing: 0;
   background-color: transparent;
   text-color: @text;
+  font: "Anonymice Nerd Font 22";
 }
 
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #3F72AFdd;
+  background-color: #928A97dd;
 }
 
 mainbox {
@@ -37,7 +38,7 @@ inputbar {
 }
 
 prompt {
-  text-color: #112D4E;
+  text-color: #283C63;
 }
 
 textbox-prompt-colon {
@@ -59,17 +60,17 @@ listview {
 element {
   padding: 5px;
   text-color: @text-alt;
-  highlight: bold #3F72AF;
+  highlight: bold #928A97;
   border-radius: 3px;
 }
 
 element selected {
-  background-color: #112D4E;
+  background-color: #283C63;
   text-color: @text;
 }
 
 element urgent, element selected urgent {
-  text-color: #112D4E;
+  text-color: #283C63;
 }
 
 element active, element selected active {
@@ -81,7 +82,7 @@ message {
   border-radius: 3px;
   background-color: @emphasis;
   border: 1px;
-  border-color: #112D4E;
+  border-color: #283C63;
 }
 
 button selected {
