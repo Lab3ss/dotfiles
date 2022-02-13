@@ -153,9 +153,9 @@ for_window [class="Yad"] floating enable
 
 ##### LOCKSCREEN #####
 
-bindsym $mod+F10 exec ~/Development/dotfiles/i3lock/lock.old.sh
-bindsym $mod+F9 exec --no-startup-id ~/Development/dotfiles/i3lock/blastme.sh
-bindsym $mod+F8 exec ~/Development/dotfiles/i3lock/lock.sh
+bindsym $mod+F8 exec --no-startup-id ~/Development/dotfiles/i3lock/blastme.sh
+bindsym $mod+F9 exec ~/Development/dotfiles/i3lock/lock.sh
+bindsym $mod+F10 exec ~/Development/dotfiles/i3lock/lock.simple.sh
 
 ##### COMMANDS #####
 

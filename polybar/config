@@ -63,8 +63,8 @@ font-2 = Anonymice Nerd Font:size=14:weight=bold;4
 font-3 = Noto Sans Mono:size=11:weight=bold;4
 
 modules-left = i3
-modules-center = date time meteo
-modules-right = lighting pulseaudio filesystem memory cpu wireless eth downspeed upspeed
+modules-center = date time
+modules-right = lighting pulseaudio filesystem memory cpu wireless eth
 
 tray-position = none
 tray-padding = 2
@@ -172,13 +172,12 @@ format-disconnected =
 
 [module/wireless]
 type = internal/network
-interface = wlp41s0
+interface = wlp2s0
 interval = 3.0
 
-format-connected-underline = #55aa55
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip% ( %downspeed%,  %upspeed%)
+label-connected = %local_ip%
 
 format-disconnected =
 
@@ -186,7 +185,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "%A %d %b"
+date = "%a %d %b"
 
 label = %date%
 

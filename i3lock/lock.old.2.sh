@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
-xset -dpms s off
 
 # set the icon and a temporary location for the screenshot to be stored
-icon=~/Development/dotfiles/i3lock/lock.png
+icon=~/Development/dotfiles/i3lock/scarheadwhite.png
 tmpbg=~/Development/dotfiles/i3lock/screen.png
 # 
 # take a screenshot
 scrot -o "$tmpbg"
 # 
 # blur the screenshot
-convert "$tmpbg" -blur 0x5 "$tmpbg"
-
+convert "$tmpbg" -blur 0x7 "$tmpbg"
+# 
 # overlay the icon onto the screenshot
 convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
+# 
+# # lock the screen with the blurred screenshot
+# ~/Apps/i3lock-color/build/i3lock -t --ringvercolor=FF000000 -i "$tmpbg"
+
 
 #!/bin/sh
 
@@ -21,7 +24,7 @@ C='#ffffffAA'  # clear ish
 C2='#ffffff18'  # clear ish
 D='#ff00ffcc'  # default
 W='#880000bb'  # wrong
-M='#283c63ee'  # main color
+M='#00AA88ee'  # main color
 
 ~/Apps/i3lock-color/build/i3lock \
 	-i $tmpbg \
@@ -38,9 +41,9 @@ M='#283c63ee'  # main color
 \
 --verif-color=$M        \
 --wrong-color=$M        \
---time-color='#FFFFFF88'        \
---date-color='#FFFFFF88'       \
---layout-color='#FFFFFF88'      \
+--time-color=$M        \
+--date-color=$M       \
+--layout-color=$M      \
 --keyhl-color=$M       \
 --bshl-color=$M        \
 \
@@ -48,16 +51,16 @@ M='#283c63ee'  # main color
 --force-clock               \
 --indicator           \
 \ # --greeter-text="There’s no need to call me ‘sir,’ Professor."           \
---greeter-text="The computer was born to solve problems that did not exist before."           \
+--greeter-text="The ministry has fallen. Scrimgeour is dead. They are coming"           \
 --greeter-color='#FFFFFF88'           \
 --greeter-size=24			\
 --greeter-pos="w/2:3*(h/4)"					\
 --time-str="%H:%M:%S"  \
 --time-pos="w/2:h/4"					\
---time-size=64			\
+--time-size=48			\
 --date-str="%A, %m %Y" \
---date-pos="w/2:(h/4)+50"					\
---date-size=26				\
+--date-pos="w/2:(h/4)+30"					\
+--date-size=18				\
 --keylayout 2         \
 --noinput-text='' 		\
 --wrong-text='' 		\
