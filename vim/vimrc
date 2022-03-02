@@ -27,11 +27,13 @@ set backspace=2                  " Allow backspacing (or Ctrl-W/Ctrl-U) in inser
                                  "
 set autoindent                   " Respect indentation when starting a new line
 set smartindent                  " Auto add indent level
-set tabstop=4                    " Number of spaces Tab is counted for
-set shiftwidth=4                 " Number of spaces to use for autoindent
+set tabstop=2                    " Number of spaces Tab is counted for
+set shiftwidth=2                 " Number of spaces to use for autoindent
 set nowrap                       " display one line on one line
 
-set foldmethod=manual            " Define folds using syntax
+set foldmethod=syntax            " Define folds using syntax
+let javaScript_fold=1
+set foldlevelstart=99
 
                                  " ### SWAP & BACKUP ###
                                  "
@@ -170,7 +172,7 @@ let g:ctrlp_custom_ignore = {
 let g:goyo_width = 100
 let g:goyo_height = '90%'
 
-let g:ale_fixers = ['eslint']
+let g:ale_fixers = ['prettier', 'eslint']
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver']
@@ -189,7 +191,7 @@ nmap     <leader>" f"lci"
 nmap     <leader>` f`lci`
 nmap     <leader>l iconsole.log(
 nmap     <leader>z zA
-nmap     <leader>g :GitGutterBufferToggle<CR>
+nmap     <leader>g :GitBlameToggle<CR>
 
 nmap     <C-F>f <Plug>CtrlSFPrompt
 vmap     <C-F>f <Plug>CtrlSFVwordPath
@@ -231,6 +233,7 @@ hi CursorLineNr ctermfg=1 ctermbg=none cterm=none
 hi Comment cterm=italic
 hi SignColumn cterm=none ctermbg=none
 hi MatchParen cterm=bold ctermbg=0 ctermfg=none
+hi Folded cterm=bold ctermbg=0 ctermfg=none
 "highlight clear ALEErrorSign
 "highlight clear ALEWarningSign
 highlight ALEWarning cterm=none ctermbg=94

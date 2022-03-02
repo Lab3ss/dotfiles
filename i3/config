@@ -104,10 +104,10 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-		bindsym h resize shrink width 10 px or 10 ppt
-		bindsym j resize grow height 10 px or 10 ppt
-		bindsym k resize shrink height 10 px or 10 ppt
-		bindsym l resize grow width 10 px or 10 ppt
+		bindsym h resize shrink width 6 px or 6 ppt
+		bindsym j resize grow height 6 px or 6 ppt
+		bindsym k resize shrink height 6 px or 6 ppt
+		bindsym l resize grow width 6 px or 6 ppt
 
 		# same bindings, but for the arrow keys
 		bindsym Left resize shrink width 10 px or 10 ppt
@@ -169,6 +169,7 @@ bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Devel
 
 bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
 bindsym $mod+Shift+x exec feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
+bindsym $mod+Shift+z exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
 
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
