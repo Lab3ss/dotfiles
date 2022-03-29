@@ -123,8 +123,8 @@ mode "resize" {
 
 ##### COLORS, BORDERS, GAPS #####
 
-set $main_color #00AA88
-set $main_dark_color #2B554C
+set $main_color #404a52
+set $main_dark_color #282e33
 set $dark_color #1d1d1d
 set $light_color #AAAAAA
 
@@ -138,12 +138,14 @@ client.placeholder      $main_dark_color $dark_color $light_color $main_color $m
 client.background       $dark_color
 
 for_window [class="^.*"] border pixel 0
+for_window [class="Alacritty"] border pixel 6
 
 gaps inner 20
 
 ##### BAR #####
 exec_always --no-startup-id ~/Development/dotfiles/polybar/polybar.sh &
 bindsym $mod+p exec polybar-msg cmd toggle
+exec polybar-msg cmd toggle
 ##### ASSIGN APP TO WORKSPACE #####
 
 for_window [class="Spotify"] move container to workspace 7
@@ -164,7 +166,7 @@ bindsym $mod+F10 exec ~/Development/dotfiles/i3lock/lock.simple.sh
 bindsym $mod+Shift+minus exec redshift -O 3400 -b 0.7
 bindsym $mod+Shift+equal exec redshift -O 4500 -b 1
 
-exec --no-startup-id feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
+exec --no-startup-id feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
 bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Development/dotfiles/theme-generator/output.txt
 
 bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
