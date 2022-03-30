@@ -14,7 +14,7 @@
   text:       #dfdfdf;
   text-alt:   #b2b2b2;
   fg:         #abb2bf;
-  bg:         #282c34;
+  bg:         #191d26;
 
   spacing: 0;
   background-color: transparent;
@@ -25,7 +25,7 @@
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #928A97dd;
+  background-color: #191d26ee;
 }
 
 mainbox {
@@ -38,7 +38,7 @@ inputbar {
 }
 
 prompt {
-  text-color: #283C63;
+  text-color: #F85F73;
 }
 
 textbox-prompt-colon {
@@ -65,7 +65,7 @@ element {
 }
 
 element selected {
-  background-color: #283C63;
+  background-color: #F85F73;
   text-color: @text;
 }
 
