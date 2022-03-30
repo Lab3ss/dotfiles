@@ -71,16 +71,16 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+t layout toggle split
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 1
+bindsym $mod+2 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 2
+bindsym $mod+3 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 3
+bindsym $mod+4 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 4
+bindsym $mod+5 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 5
+bindsym $mod+6 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 6
+bindsym $mod+7 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 7
+bindsym $mod+8 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 8
+bindsym $mod+9 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 9
+bindsym $mod+0 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -173,6 +173,8 @@ bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
 bindsym $mod+Shift+x exec feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
 bindsym $mod+Shift+z exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
 
+bindsym $mod+Shift+s exec --no-startup-id scrot ~/Images/screens/screenshot.jpg
+
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
 #exec --no-startup-id slack &
@@ -191,4 +193,4 @@ exec xset r rate 200 30
 
 exec setxkbmap us
 
-# exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG.sh
+exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG2.bk.sh

@@ -60,13 +60,13 @@ listview {
 element {
   padding: 5px;
   text-color: @text-alt;
-  highlight: bold #928A97;
+  highlight: bold #283C63;
   border-radius: 3px;
 }
 
 element selected {
   background-color: #F85F73;
-  text-color: @text;
+  text-color: #191d26;
 }
 
 element urgent, element selected urgent {
