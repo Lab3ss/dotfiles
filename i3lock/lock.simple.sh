@@ -7,7 +7,7 @@ tmpbg=~/Development/dotfiles/i3lock/screen.png
 scrot -o "$tmpbg"
 # 
 # blur the screenshot
-convert "$tmpbg" -blur 0x5 "$tmpbg"
+convert "$tmpbg" -blur 0x4 "$tmpbg"
 
 B='#00000000'  # blank
 C='#ffffffAA'  # clear ish

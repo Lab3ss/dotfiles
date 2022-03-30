@@ -9,7 +9,7 @@ tmpbg=~/Development/dotfiles/i3lock/screen.png
 scrot -o "$tmpbg"
 # 
 # blur the screenshot
-convert "$tmpbg" -blur 0x5 "$tmpbg"
+convert "$tmpbg" -blur 0x4 "$tmpbg"
 
 # overlay the icon onto the screenshot
 convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"

@@ -202,7 +202,7 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-Space> :NERDTreeToggle<CR>
-" nmap     <C-G> :Goyo<CR>
+"nmap     <C-W>g :Goyo<CR>
 nmap     <C-G>b :GitBlameToggle<CR>
 nmap     <C-H> :bprev<CR>
 nmap     <C-L> :bnext<CR>
