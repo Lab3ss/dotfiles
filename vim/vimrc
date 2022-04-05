@@ -209,10 +209,10 @@ nmap     <C-L> :bnext<CR>
 nmap <C-[> <Plug>(ale_previous_wrap)
 nmap <C-]> <Plug>(ale_next_wrap)
 nmap <leader>p :ALEFix<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :vsp<CR><Plug>(coc-definition)
+nmap <silent> gy :vsp<CR><Plug>(coc-type-definition)
+nmap <silent> gi :vsp<CR><Plug>(coc-implementation)
+nmap <silent> gr :vsp<CR><Plug>(coc-references)
 nmap <C-Q> :bd<CR>
 
 " map <F11> :ResizeFontSmaller<CR>
@@ -234,6 +234,8 @@ hi Comment cterm=italic
 hi SignColumn cterm=none ctermbg=none
 hi MatchParen cterm=bold ctermbg=0 ctermfg=none
 hi Folded cterm=bold ctermbg=0 ctermfg=none
+hi Pmenu ctermfg=15 ctermbg=7
+hi PmenuSel ctermfg=1 ctermbg=0
 "highlight clear ALEErrorSign
 "highlight clear ALEWarningSign
 highlight ALEWarning cterm=underline ctermbg=none

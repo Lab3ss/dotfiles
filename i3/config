@@ -71,14 +71,14 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+t layout toggle split
 
 # switch to workspace
-bindsym $mod+1 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 1
-bindsym $mod+2 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 2
-bindsym $mod+3 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 3
-bindsym $mod+4 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 4
-bindsym $mod+5 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 5
-bindsym $mod+6 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 6
-bindsym $mod+7 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 7
-bindsym $mod+8 exec feh --bg-fill ~/Development/dotfiles/pscircle/pscircle.jpg; workspace 8
+bindsym $mod+1 exec feh --bg-fill ~/pscircle.jpg; workspace 1
+bindsym $mod+2 exec feh --bg-fill ~/pscircle.jpg; workspace 2
+bindsym $mod+3 exec feh --bg-fill ~/pscircle.jpg; workspace 3
+bindsym $mod+4 exec feh --bg-fill ~/pscircle.jpg; workspace 4
+bindsym $mod+5 exec feh --bg-fill ~/pscircle.jpg; workspace 5
+bindsym $mod+6 exec feh --bg-fill ~/pscircle.jpg; workspace 6
+bindsym $mod+7 exec feh --bg-fill ~/pscircle.jpg; workspace 7
+bindsym $mod+8 exec feh --bg-fill ~/pscircle.jpg; workspace 8
 bindsym $mod+9 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 9
 bindsym $mod+0 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 10
 
@@ -139,6 +139,7 @@ client.background       $dark_color
 
 for_window [class="^.*"] border pixel 0
 for_window [class="Alacritty"] border pixel 6
+for_window [class="MPlayer"] border pixel 6
 
 gaps inner 20
 
@@ -193,4 +194,4 @@ exec xset r rate 200 30
 
 exec setxkbmap us
 
-exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG2.bk.sh
+exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG2.bk.sh &

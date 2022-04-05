@@ -52,29 +52,23 @@ entry {
 }
 
 listview {
-  spacing: 5px;
+  spacing: 8px;
   dynamic: true;
   scrollbar: false;
 }
 
 element {
-  padding: 5px;
+  padding: 8px;
   text-color: @text-alt;
-  highlight: bold #283C63;
-  border-radius: 3px;
+  highlight: bold #F85F73;
 }
 
 element selected {
-  background-color: #F85F73;
-  text-color: #191d26;
-}
-
-element urgent, element selected urgent {
-  text-color: #283C63;
-}
-
-element active, element selected active {
-  text-color: @fg;
+  border: 2px;
+  border-color: #F85F73;
+  border-radius: 3px;
+  text-color: @text-alt;
+  background-color: #0f1218;
 }
 
 message {
