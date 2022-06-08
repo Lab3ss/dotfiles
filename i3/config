@@ -142,6 +142,8 @@ for_window [class="Alacritty"] border pixel 6
 for_window [class="MPlayer"] border pixel 6
 
 gaps inner 20
+smart_gaps on
+smart_borders no_gaps
 
 ##### BAR #####
 exec_always --no-startup-id ~/Development/dotfiles/polybar/polybar.sh &
@@ -191,6 +193,9 @@ exec uncluter -idle 1 --root &
 
 # Reduce keyboard delay to detect the same key
 exec xset r rate 200 30
+
+# Active touchpad
+exec xinput set-prop 14 331 1
 
 exec setxkbmap us
 
