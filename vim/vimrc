@@ -121,6 +121,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " GraphQL queries syntax
 Plug 'jparise/vim-graphql'
+"
+" Prisma syntax
+Plug 'pantharshit00/vim-prisma'
 
 " Plug 'moll/vim-node'
 
@@ -173,13 +176,13 @@ let g:ctrlp_custom_ignore = {
 let g:goyo_width = 100
 let g:goyo_height = '90%'
 
-" let g:ale_fixers = ['prettier', 'eslint']
-let g:ale_fixers = {
- \   'css': ['prettier'],
- \   'html': ['prettier'],
- \   'javascript': ['prettier', 'eslint'],
- \   'typescript': ['prettier', 'eslint'],
- \}
+let g:ale_fixers = ['prettier', 'eslint']
+"let g:ale_fixers = {
+" \   'css': ['prettier'],
+" \   'html': ['prettier'],
+" \   'javascript': ['prettier', 'eslint'],
+" \   'typescript': ['prettier', 'eslint'],
+" \}
 
 
 " CoC extensions
@@ -210,6 +213,7 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-Space> :NERDTreeToggle<CR>
+nmap     <leader>n :NERDTreeFind<CR>
 "nmap     <C-W>g :Goyo<CR>
 nmap     <C-G>b :GitBlameToggle<CR>
 nmap     <C-H> :bprev<CR>

@@ -104,16 +104,21 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-		bindsym h resize shrink width 6 px or 6 ppt
-		bindsym j resize grow height 6 px or 6 ppt
-		bindsym k resize shrink height 6 px or 6 ppt
-		bindsym l resize grow width 6 px or 6 ppt
+		bindsym h resize shrink width 10 px or 4 ppt
+		bindsym j resize grow height 10 px or 4 ppt
+		bindsym k resize shrink height 10 px or 4 ppt
+		bindsym l resize grow width 10 px or 4 ppt
+
+		bindsym Shift+h resize shrink width 10 px
+		bindsym Shift+j resize grow height 10 px
+		bindsym Shift+k resize shrink height 10 px
+		bindsym Shift+l resize grow width 10 px
 
 		# same bindings, but for the arrow keys
-		bindsym Left resize shrink width 10 px or 10 ppt
-		bindsym Down resize grow height 10 px or 10 ppt
-		bindsym Up resize shrink height 10 px or 10 ppt
-		bindsym Right resize grow width 10 px or 10 ppt
+		#bindsym Left resize shrink width 10 px or 10 ppt
+		#bindsym Down resize grow height 10 px or 10 ppt
+		#bindsym Up resize shrink height 10 px or 10 ppt
+		#bindsym Right resize grow width 10 px or 10 ppt
 
 		# back to normal: Enter or Escape
 		bindsym Return mode "default"
@@ -142,8 +147,8 @@ for_window [class="Alacritty"] border pixel 6
 for_window [class="MPlayer"] border pixel 6
 
 gaps inner 20
-smart_gaps on
-smart_borders no_gaps
+#smart_gaps on
+#smart_borders no_gaps
 
 ##### BAR #####
 exec_always --no-startup-id ~/Development/dotfiles/polybar/polybar.sh &
