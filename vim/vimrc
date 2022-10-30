@@ -199,6 +199,22 @@ let g:clever_f_smart_case = 1
 let g:clever_f_mark_direct = 0
 let g:clever_f_chars_match_any_signs = ';'
 
+let g:fzf_layout = {'window': { 'width': 1, 'height': 1,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'CursorLineNr'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 " ############################################################################
 " ############################## MAPPING #####################################
 " ############################################################################
@@ -234,7 +250,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <C-Q> :bd<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
+nmap <C-Q> :w<CR> :bd<CR>
 nmap <C-B> :Buffers<CR>
 nmap <C-P> :GFiles<CR>
 
@@ -280,12 +297,11 @@ au BufEnter * setlocal cursorline
 au BufLeave * setlocal nocursorline
 
 " Use K to show documentation in preview window.
-"nnoremap <silent> K :call ShowDocumentation()<CR>
-"
-"function! ShowDocumentation()
-"  if CocAction('hasProvider', 'hover')
-"    call CocActionAsync('doHover')
-"  else
-"    call feedkeys('K', 'in')
-"  endif
-"endfunction
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction

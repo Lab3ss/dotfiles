@@ -2,7 +2,7 @@
 	name = Alexis Besson
 	email = alexis.besson1@gmail.com
 [push]
-	default = matching
+	default = upstream
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	a = add
