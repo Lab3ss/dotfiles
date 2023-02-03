@@ -146,6 +146,8 @@ Plug 'junegunn/goyo.vim'
 "
 Plug 'rhysd/clever-f.vim'
 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 colorscheme peachpuff                    " Select color scheme 
@@ -182,16 +184,18 @@ let g:goyo_width = 100
 let g:goyo_height = '90%'
 
 let g:ale_fixers = ['prettier', 'eslint']
-"let g:ale_fixers = {
-" \   'css': ['prettier'],
-" \   'html': ['prettier'],
-" \   'javascript': ['prettier', 'eslint'],
-" \   'typescript': ['prettier', 'eslint'],
-" \}
+let g:ale_fixers = {
+ \   'css': ['prettier'],
+ \   'html': ['prettier'],
+ \   'javascript': ['prettier', 'eslint'],
+ \   'typescript': ['prettier', 'eslint'],
+ \   'rust': ['rustfmt'],
+ \}
 
 
 " CoC extensions
-let g:coc_global_extensions = ['coc-tsserver']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer']
+let g:coc_node_path = trim(system('which node'))
 
 let g:gitblame_enabled = 0
 
@@ -263,7 +267,7 @@ hi TabLine cterm=none ctermbg=none ctermfg=0
 hi TabLineSel ctermfg=1 ctermbg=none cterm=bold
 hi TabLineFill ctermfg=0 ctermbg=none cterm=none
 hi CursorLine cterm=bold ctermbg=16 ctermfg=none
-hi Visual cterm=none ctermfg=none ctermbg=0
+hi Visual cterm=none ctermfg=none ctermbg=17
 hi StatusLine cterm=none ctermbg=16 ctermfg=none
 hi StatusLineNC cterm=none ctermbg=16 ctermfg=none
 hi Search cterm=bold ctermbg=17 ctermfg=none

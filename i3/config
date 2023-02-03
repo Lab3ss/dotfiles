@@ -14,7 +14,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # reload the configuration file
-bindsym $mod+c reload
+bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -71,16 +71,16 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+t layout toggle split
 
 # switch to workspace
-bindsym $mod+1 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 1
-bindsym $mod+2 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 2
-bindsym $mod+3 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 3
-bindsym $mod+4 exec feh --bg-fill ~/pscircle.jpg; workspace 4
-bindsym $mod+5 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 5
-bindsym $mod+6 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 6
-bindsym $mod+7 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 7
-bindsym $mod+8 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 8
-bindsym $mod+9 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 9
-bindsym $mod+0 exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png; workspace 10
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -102,6 +102,8 @@ bindsym $mod+Tab workspace back_and_forth
 
 # mode resize
 bindsym $mod+r mode "resize"
+
+bindsym $mod+Shift+space floating toggle
 
 mode "resize" {
 		bindsym h resize shrink width 10 px or 4 ppt
@@ -145,8 +147,10 @@ client.background       $dark_color
 for_window [class="^.*"] border pixel 0
 for_window [class="Alacritty"] border pixel 6
 for_window [class="MPlayer"] border pixel 6
+for_window [class="mpv"] border pixel 6
+for_window [class="mpv"] resize set 640 480
 
-gaps inner 20
+gaps inner 40
 #smart_gaps on
 #smart_borders no_gaps
 
@@ -174,19 +178,24 @@ bindsym $mod+F10 exec ~/Development/dotfiles/i3lock/lock.simple.sh
 bindsym $mod+Shift+minus exec redshift -O 3400 -b 0.7
 bindsym $mod+Shift+equal exec redshift -O 4500 -b 1
 
-exec --no-startup-id feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
-bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Development/dotfiles/theme-generator/output.txt
+exec --no-startup-id feh --bg-fill /home/alexis/Pictures/background/main.png.png
+# bindsym $mod+Shift+b exec ~/Development/dotfiles/theme-generator/bg.sh > ~/Development/dotfiles/theme-generator/output.txt
 
-bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
-bindsym $mod+Shift+x exec feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
-bindsym $mod+Shift+z exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
+#bindsym $mod+Shift+c exec ~/Development/dotfiles/pscircle/makeBG.sh
+#bindsym $mod+Shift+x exec feh --bg-fill ~/Development/dotfiles/theme-generator/trianglify.png
+#bindsym $mod+Shift+z exec feh --bg-fill ~/Development/dotfiles/theme-generator/grey.png
 
-bindsym $mod+Shift+s exec --no-startup-id scrot ~/Images/screens/screenshot.jpg
+bindsym --release $mod+c exec --no-startup-id scrot -s -e 'xclip -selection clipboard -t image/png -i $f' > ~/Development/dotfiles/output.log 2>&1
 
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pscircle.jpg
 
+exec --no-startup-id ~/Development/dotfiles/background.sh > ~/Development/dotfiles/background.log 2>&1 &
+
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+
 #exec --no-startup-id slack &
-exec --no-startup-id picom &
+exec --no-startup-id picom --experimental-backends &
 #exec --no-startup-id google-chrome &
 
 # PC right, 2nd screen left
@@ -194,7 +203,7 @@ exec xrandr --output eDP-1 --right-of DP-1 --auto
 exec xrandr --output eDP-1 --right-of DP-2 --auto
 exec xrandr --output eDP-1 --right-of DP-2-1 --auto
 
-exec uncluter -idle 1 --root &
+exec unclutter -idle 1 --root &
 
 # Reduce keyboard delay to detect the same key
 exec xset r rate 200 30
@@ -204,4 +213,4 @@ exec xinput set-prop 14 331 1
 
 exec setxkbmap us
 
-exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG2.bk.sh &
+# exec --no-startup-id ~/Development/dotfiles/pscircle/makeBG2.bk.sh &

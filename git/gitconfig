@@ -1,6 +1,6 @@
 [user]
 	name = Alexis Besson
-	email = alexis.besson1@gmail.com
+	email = alexis@besson.tech
 [push]
 	default = upstream
 [alias]

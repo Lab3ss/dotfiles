@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 16
-    y: 16
+    x: 20
+    y: 20
   opacity: 1
 
   # Spread additional padding evenly around the terminal content.
@@ -112,7 +112,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Anonymice Nerd Font
+    family: Anonymice Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -151,7 +151,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 15.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -180,7 +180,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: "#0f1218"
+    background: "#111726"
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -294,8 +294,8 @@ colors:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   indexed_colors: [
-   { index: 16, color: '#1a1e26' },
-   { index: 17, color: '#2e323b' }
+   { index: 16, color: '#1C2230' },
+   { index: 17, color: '#282E3B' }
   ]
 
 # Bell
