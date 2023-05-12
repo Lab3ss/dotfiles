@@ -33,6 +33,7 @@ set nowrap                       " display one line on one line
 
 set foldmethod=syntax            " Define folds using syntax
 let javaScript_fold=1
+let typeScript_fold=1
 set foldlevelstart=99
 
                                  " ### SWAP & BACKUP ###
@@ -189,6 +190,8 @@ let g:ale_fixers = {
  \   'html': ['prettier'],
  \   'javascript': ['prettier', 'eslint'],
  \   'typescript': ['prettier', 'eslint'],
+ \   'javascriptreact': ['prettier', 'eslint'],
+ \   'typescriptreact': ['prettier', 'eslint'],
  \   'rust': ['rustfmt'],
  \}
 
@@ -218,6 +221,8 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+let g:ctrlsf_regex_pattern = 1
 
 " ############################################################################
 " ############################## MAPPING #####################################
@@ -267,7 +272,7 @@ hi TabLine cterm=none ctermbg=none ctermfg=0
 hi TabLineSel ctermfg=1 ctermbg=none cterm=bold
 hi TabLineFill ctermfg=0 ctermbg=none cterm=none
 hi CursorLine cterm=bold ctermbg=16 ctermfg=none
-hi Visual cterm=none ctermfg=none ctermbg=17
+hi Visual cterm=none ctermfg=none ctermbg=16
 hi StatusLine cterm=none ctermbg=16 ctermfg=none
 hi StatusLineNC cterm=none ctermbg=16 ctermfg=none
 hi Search cterm=bold ctermbg=17 ctermfg=none

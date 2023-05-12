@@ -112,10 +112,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Anonymice Nerd Font Mono
+    family: Cascadia Code
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Semilight
 
   # Bold font face
   #bold:
@@ -258,7 +258,7 @@ colors:
     blue:    "#516591"
     magenta: "#7d70b2"
     cyan:    "#5d809f"
-    white:   "#FFFFFF"
+    white:   "#E6E6E6"
 
   # Bright colors
   #bright:
@@ -295,7 +295,7 @@ colors:
   #
   indexed_colors: [
    { index: 16, color: '#1C2230' },
-   { index: 17, color: '#282E3B' }
+   { index: 17, color: '#212c49' }
   ]
 
 # Bell
