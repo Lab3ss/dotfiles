@@ -130,7 +130,7 @@ mode "resize" {
 
 ##### COLORS, BORDERS, GAPS #####
 
-set $main_color #516591
+set $main_color #c79f65
 set $main_dark_color #212c49
 set $dark_color #1d1d1d
 set $light_color #AAAAAA
@@ -144,7 +144,7 @@ client.placeholder      $main_dark_color $dark_color $light_color $main_dark_col
 
 client.background       $dark_color
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 6
 for_window [class="Alacritty"] border pixel 6
 for_window [class="MPlayer"] border pixel 6
 for_window [class="mpv"] border pixel 6
@@ -199,8 +199,8 @@ exec --no-startup-id picom --experimental-backends &
 #exec --no-startup-id google-chrome &
 
 # PC right, 2nd screen left
-exec xrandr --output HDMI-0 --rotate left
-exec xrandr --output DP-0 --right-of HDMI-0 --auto
+#exec xrandr --output HDMI-1 --rotate left
+#exec xrandr --output DP-3 --right-of HDMI-1 --auto
 #exec xrandr --output eDP-1 --right-of DP-1 --auto
 #exec xrandr --output eDP-1 --right-of DP-2 --auto
 #exec xrandr --output eDP-1 --right-of DP-2-1 --auto
