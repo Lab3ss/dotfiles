@@ -19,14 +19,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #001d1f21
+background = #001d1f
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #c5bfc5
 foreground-alt = #555
-primary = #F85F73
+primary = #e35b6d
 secondary = #283C63
-alert = #bd2c40
+alert = #e35b6d
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -38,7 +38,7 @@ height = 32
 ;radius = 6
 fixed-center = true
 
-background = #00191d26
+background = #00191d00
 foreground = ${colors.foreground}
 
 line-size = 3
