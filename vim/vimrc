@@ -291,6 +291,7 @@ hi ALEWarning ctermbg=none
 hi ALEError ctermbg=none
 hi ALEWarningSign ctermfg=3 ctermbg=none
 hi ALEErrorSign ctermfg=1 ctermbg=none
+hi CocInlayHint cterm=italic ctermbg=none ctermfg=18
 
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'

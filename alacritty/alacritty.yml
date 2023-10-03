@@ -295,7 +295,8 @@ colors:
   #
   indexed_colors: [
    { index: 16, color: '#1C2230' },
-   { index: 17, color: '#212c49' }
+   { index: 17, color: '#212c49' },
+   { index: 18, color: '#424c54' }
   ]
 
 # Bell
